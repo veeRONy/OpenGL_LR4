@@ -1,6 +1,6 @@
-#include"mesh.h"
-#include<assert.h>
-#include"ogldev_util.h"
+#include <assert.h>
+
+#include "mesh.h"
 
 Mesh::MeshEntry::MeshEntry()
 {
@@ -8,15 +8,17 @@ Mesh::MeshEntry::MeshEntry()
     IB = INVALID_OGL_VALUE;
     NumIndices = 0;
     MaterialIndex = INVALID_MATERIAL;
-}
+};
 
 Mesh::MeshEntry::~MeshEntry()
 {
-    if (VB != INVALID_OGL_VALUE) {
+    if (VB != INVALID_OGL_VALUE)
+    {
         glDeleteBuffers(1, &VB);
     }
 
-    if (IB != INVALID_OGL_VALUE) {
+    if (IB != INVALID_OGL_VALUE)
+    {
         glDeleteBuffers(1, &IB);
     }
 }
@@ -28,15 +30,12 @@ bool Mesh::MeshEntry::Init(const std::vector<Vertex>& Vertices,
 
     glGenBuffers(1, &VB);
     glBindBuffer(GL_ARRAY_BUFFER, VB);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(),
-        &Vertices[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
 
     glGenBuffers(1, &IB);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * NumIndices,
-        &Indices[0], GL_STATIC_DRAW);
-
-    return true;
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * NumIndices, &Indices[0], GL_STATIC_DRAW);
+    return false;
 }
 
 void Mesh::Clear()
@@ -45,6 +44,7 @@ void Mesh::Clear()
         SAFE_DELETE(m_Textures[i]);
     }
 }
+
 
 bool Mesh::LoadMesh(const std::string& Filename)
 {
@@ -86,6 +86,7 @@ void Mesh::InitMesh(unsigned int Index, const aiMesh* paiMesh)
 
     std::vector<Vertex> Vertices;
     std::vector<unsigned int> Indices;
+
     const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 
     for (unsigned int i = 0; i < paiMesh->mNumVertices; i++) {
@@ -99,6 +100,7 @@ void Mesh::InitMesh(unsigned int Index, const aiMesh* paiMesh)
 
         Vertices.push_back(v);
     }
+
     for (unsigned int i = 0; i < paiMesh->mNumFaces; i++) {
         const aiFace& Face = paiMesh->mFaces[i];
         assert(Face.mNumIndices == 3);
@@ -106,12 +108,13 @@ void Mesh::InitMesh(unsigned int Index, const aiMesh* paiMesh)
         Indices.push_back(Face.mIndices[1]);
         Indices.push_back(Face.mIndices[2]);
     }
+
     m_Entries[Index].Init(Vertices, Indices);
 }
 
 bool Mesh::InitMaterials(const aiScene* pScene, const std::string& Filename)
 {
-    // Извлекаем директорию из полного имени файла
+    // Extract the directory part from the file name
     std::string::size_type SlashIndex = Filename.find_last_of("/");
     std::string Dir;
 
@@ -127,16 +130,16 @@ bool Mesh::InitMaterials(const aiScene* pScene, const std::string& Filename)
 
     bool Ret = true;
 
-    // Инициализируем материал
+    // Initialize the materials
     for (unsigned int i = 0; i < pScene->mNumMaterials; i++) {
         const aiMaterial* pMaterial = pScene->mMaterials[i];
 
         m_Textures[i] = NULL;
+
         if (pMaterial->GetTextureCount(aiTextureType_DIFFUSE) > 0) {
             aiString Path;
 
-            if (pMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &Path,
-                NULL, NULL, NULL, NULL, NULL) == AI_SUCCESS) {
+            if (pMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &Path, NULL, NULL, NULL, NULL, NULL) == AI_SUCCESS) {
                 std::string FullPath = Dir + "/" + Path.data;
                 m_Textures[i] = new Texture(GL_TEXTURE_2D, FullPath.c_str());
 
@@ -145,6 +148,9 @@ bool Mesh::InitMaterials(const aiScene* pScene, const std::string& Filename)
                     delete m_Textures[i];
                     m_Textures[i] = NULL;
                     Ret = false;
+                }
+                else {
+                    printf("Loaded texture '%s'\n", FullPath.c_str());
                 }
             }
         }

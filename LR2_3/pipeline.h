@@ -1,9 +1,7 @@
-#pragma once
-
-#include "math_3d.h"
 #ifndef PIPELINE_H
 #define	PIPELINE_H
 
+#include "math_3d.h"
 
 class Pipeline
 {
@@ -36,13 +34,9 @@ public:
         m_rotateInfo.z = RotateZ;
     }
 
-    void SetPerspectiveProj(float FOV, float Width, float Height, float zNear, float zFar)
+    void SetPerspectiveProj(const PersProjInfo& p)
     {
-        m_persProj.FOV = FOV;
-        m_persProj.Width = Width;
-        m_persProj.Height = Height;
-        m_persProj.zNear = zNear;
-        m_persProj.zFar = zFar;
+        m_persProjInfo = p;
     }
 
     void SetCamera(const Vector3f& Pos, const Vector3f& Target, const Vector3f& Up)
@@ -52,7 +46,6 @@ public:
         m_camera.Up = Up;
     }
 
-    //const Matrix4f* GetTrans();
     const Matrix4f& GetWVPTrans();
 
     const Matrix4f& GetWorldTrans();
@@ -62,13 +55,7 @@ private:
     Vector3f m_worldPos;
     Vector3f m_rotateInfo;
 
-    struct {
-        float FOV;
-        float Width;
-        float Height;
-        float zNear;
-        float zFar;
-    } m_persProj;
+    PersProjInfo m_persProjInfo;
 
     struct {
         Vector3f Pos;

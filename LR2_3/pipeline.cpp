@@ -1,5 +1,5 @@
 #include "pipeline.h"
-
+#include "math_3d.h"
 
 const Matrix4f& Pipeline::GetWorldTrans()
 {
@@ -21,7 +21,7 @@ const Matrix4f& Pipeline::GetWVPTrans()
 
     CameraTranslationTrans.InitTranslationTransform(-m_camera.Pos.x, -m_camera.Pos.y, -m_camera.Pos.z);
     CameraRotateTrans.InitCameraTransform(m_camera.Target, m_camera.Up);
-    PersProjTrans.InitPersProjTransform(m_persProj.FOV, m_persProj.Width, m_persProj.Height, m_persProj.zNear, m_persProj.zFar);
+    PersProjTrans.InitPersProjTransform(m_persProjInfo);
 
     m_WVPtransformation = PersProjTrans * CameraRotateTrans * CameraTranslationTrans * m_WorldTransformation;
     return m_WVPtransformation;

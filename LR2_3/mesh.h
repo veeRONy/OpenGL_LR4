@@ -1,28 +1,25 @@
-#pragma once
+#ifndef MESH_H
+#define MESH_H
 
-#include"assimp/Importer.hpp"
-#include"assimp/scene.h"
-#include"assimp/postprocess.h"
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
-#include<vector>
-#include"texture.h"
-#include"math_3d.h"
-#include<map>
+#include <map>
+#include <vector>
+#include <GL/glew.h>
+
+#include "ogldev_util.h"
+#include "math_3d.h"
+#include "texture.h"
 
 struct Vertex
 {
-    Vector3f m_pos; // координаты фигуры
-    Vector2f m_tex; // координаты текстуры
-    Vector3f m_normal; // нормали
+    Vector3f m_pos;
+    Vector2f m_tex;
+    Vector3f m_normal;
 
     Vertex() {}
-
-    Vertex(Vector3f pos, Vector2f tex)
-    {
-        m_pos = pos;
-        m_tex = tex;
-        m_normal = Vector3f(0.0f, 0.0f, 0.0f);
-    }
 
     Vertex(const Vector3f& pos, const Vector2f& tex, const Vector3f& normal)
     {
@@ -32,21 +29,14 @@ struct Vertex
     }
 };
 
-
 class Mesh
 {
 public:
-    Mesh()
-    {
-
-    }
-
+    Mesh() {};
     ~Mesh() {
-
-    }
-
+        Clear();
+    };
     bool LoadMesh(const std::string& Filename);
-
     void Render();
 
 private:
@@ -59,7 +49,6 @@ private:
 
     struct MeshEntry {
         MeshEntry();
-
         ~MeshEntry();
 
         bool Init(const std::vector<Vertex>& Vertices,
@@ -67,6 +56,7 @@ private:
 
         GLuint VB;
         GLuint IB;
+
         unsigned int NumIndices;
         unsigned int MaterialIndex;
     };
@@ -74,3 +64,5 @@ private:
     std::vector<MeshEntry> m_Entries;
     std::vector<Texture*> m_Textures;
 };
+
+#endif /* MESH_H */

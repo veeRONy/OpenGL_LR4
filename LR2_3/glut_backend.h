@@ -1,6 +1,5 @@
-#pragma once
 #ifndef GLUT_BACKEND_H
-#define GLUT_BACKEND_H
+#define	GLUT_BACKEND_H
 
 #include "callbacks.h"
 
@@ -10,4 +9,4 @@ bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned i
 
 void GLUTBackendRun(ICallbacks* pCallbacks);
 
-#endif /* GLUT_BACKEND_H */
+#endif	/* GLUT_BACKEND_H */

@@ -20,8 +20,8 @@ public:
     void Load(unsigned int BufferSize, void* pData);
 
     void LoadRaw(int Width, int Height, int BPP, unsigned char* pData);
-    
-    
+
+
     void Bind(GLenum TextureUnit);
 
 private:

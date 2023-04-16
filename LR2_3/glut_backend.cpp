@@ -5,29 +5,42 @@
 
 #include "glut_backend.h"
 
+// Points to the object implementing the ICallbacks interface which was delivered to
+// GLUTBackendRun(). All events are forwarded to this object.
 static ICallbacks* s_pCallbacks = NULL;
 
-static void SpecialKeyboardCB(int Key, int x, int y) {
+static void SpecialKeyboardCB(int Key, int x, int y)
+{
     s_pCallbacks->SpecialKeyboardCB(Key, x, y);
 }
 
-static void KeyboardCB(unsigned char Key, int x, int y) {
+
+static void KeyboardCB(unsigned char Key, int x, int y)
+{
     s_pCallbacks->KeyboardCB(Key, x, y);
 }
 
-static void PassiveMouseCB(int x, int y) {
+
+static void PassiveMouseCB(int x, int y)
+{
     s_pCallbacks->PassiveMouseCB(x, y);
 }
 
-static void RenderSceneCB() {
+
+static void RenderSceneCB()
+{
     s_pCallbacks->RenderSceneCB();
 }
 
-static void IdleCB() {
+
+static void IdleCB()
+{
     s_pCallbacks->IdleCB();
 }
 
-static void InitCallbacks() {
+
+static void InitCallbacks()
+{
     glutDisplayFunc(RenderSceneCB);
     glutIdleFunc(IdleCB);
     glutSpecialFunc(SpecialKeyboardCB);
@@ -35,13 +48,17 @@ static void InitCallbacks() {
     glutKeyboardFunc(KeyboardCB);
 }
 
-void GLUTBackendInit(int argc, char** argv) {
+
+void GLUTBackendInit(int argc, char** argv)
+{
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
     glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 }
 
-bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned int bpp, bool isFullScreen, const char* pTitle) {
+
+bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned int bpp, bool isFullScreen, const char* pTitle)
+{
     if (isFullScreen) {
         char ModeString[64] = { 0 };
         snprintf(ModeString, sizeof(ModeString), "%dx%d@%d", Width, Height, bpp);
@@ -53,6 +70,7 @@ bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned i
         glutCreateWindow(pTitle);
     }
 
+    // Must be done after glut is initialized!
     GLenum res = glewInit();
     if (res != GLEW_OK) {
         fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
@@ -62,7 +80,8 @@ bool GLUTBackendCreateWindow(unsigned int Width, unsigned int Height, unsigned i
     return true;
 }
 
-void GLUTBackendRun(ICallbacks* pCallbacks) {
+void GLUTBackendRun(ICallbacks* pCallbacks)
+{
     if (!pCallbacks) {
         fprintf(stderr, "%s : callbacks not specified!\n", __FUNCTION__);
         return;

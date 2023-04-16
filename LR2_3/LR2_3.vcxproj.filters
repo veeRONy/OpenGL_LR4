@@ -54,6 +54,15 @@
     <ClCompile Include="shadow_map_technique.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="cubemap_texture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="skybox_technique.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="skybox.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -80,9 +89,6 @@
     <ClInclude Include="..\..\..\..\..\ogldev-master\Include\3rdparty\stb_image.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\ogldev-master\Include\ogldev_util.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="ogldev_types.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
@@ -105,6 +111,15 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="shadow_map_technique.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="cubemap_texture.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="skybox_technique.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="skybox.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,7 +16,7 @@ bool Texture::Load()
 #ifdef USE_IMAGE_MAGICK
     try {
         m_pImage = new Magick::Image(m_fileName);
-        
+
         m_pImage->write(&m_blob, "RGBA");
     }
     catch (Magick::Error& Error) {
@@ -26,7 +26,7 @@ bool Texture::Load()
 #else // STB image
 
     stbi_set_flip_vertically_on_load(1);
-   
+
     unsigned char* image_data = stbi_load(m_fileName.c_str(), &m_imageWidth, &m_imageHeight, &m_imageBPP, 0);
 
     if (!image_data) {

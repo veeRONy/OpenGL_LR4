@@ -1,1 +1,56 @@
-﻿  LR2_3.vcxproj -> C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\x64\Release\LR2_3.exe
+﻿  Source.cpp
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244: =: преобразование "double" в "TReal", возможна потеря данных
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(186): message : во время компиляции функции-члена класс шаблон "void aiQuaterniont<float>::Interpolate(aiQuaterniont<float> &,const aiQuaterniont<float> &,const aiQuaterniont<float> &,TReal)"
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(435): message : выполняется компиляция ссылки на экземпляр шаблон функции "void aiQuaterniont<float>::Interpolate(aiQuaterniont<float> &,const aiQuaterniont<float> &,const aiQuaterniont<float> &,TReal)"
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(107): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "aiQuaterniont<float>"
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(208,14): warning C4244: =: преобразование "double" в "TReal", возможна потеря данных
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(209,61): warning C4244: =: преобразование "double" в "TReal", возможна потеря данных
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(210,33): warning C4244: =: преобразование "double" в "TReal", возможна потеря данных
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(93,13): warning C4244: return: преобразование "double" в "TReal", возможна потеря данных
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(92): message : во время компиляции функции-члена класс шаблон "TReal aiVector3t<TReal>::Length(void) const"
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(98): message : выполняется компиляция ссылки на экземпляр шаблон функции "TReal aiVector3t<TReal>::Length(void) const"
+          with
+          [
+              TReal=float
+          ]
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\vector3.inl(142): message : во время компиляции функции-члена класс шаблон "bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const"
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(82): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const"
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\types.h(150): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "aiVector3t<float>"
+  Создание кода
+  5 of 866 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  LR2_3.vcxproj -> C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\x64\Release\LR2_3.exe
