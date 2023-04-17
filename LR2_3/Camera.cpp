@@ -110,6 +110,16 @@ bool Camera::OnKeyboard(int Key)
         Ret = true;
     }
     break;
+    case GLUT_KEY_END:
+    {
+        m_pos.y -= STEP_SCALE;
+        Ret = true;
+    } break;
+    case GLUT_KEY_HOME:
+    {
+        m_pos.y += STEP_SCALE;
+        Ret = true;
+    } break;
     }
 
     return Ret;

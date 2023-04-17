@@ -27,6 +27,10 @@ void WriteBinaryFile(const char* pFilename, const void* pData, int size);
 void OgldevError(const char* pFileName, uint line, const char* msg, ... );
 void OgldevFileError(const char* pFileName, uint line, const char* pFileError);
 
+#define COLOR_TEXTURE_UNIT GL_TEXTURE0
+#define SHADOW_TEXTURE_UNIT GL_TEXTURE1
+#define NORMAL_TEXTURE_UNIT GL_TEXTURE2
+
 #define OGLDEV_ERROR0(msg) OgldevError(__FILE__, __LINE__, msg)
 #define OGLDEV_ERROR(msg, ...) OgldevError(__FILE__, __LINE__, msg, __VA_ARGS__)
 #define OGLDEV_FILE_ERROR(FileError) OgldevFileError(__FILE__, __LINE__, FileError);

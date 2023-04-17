@@ -1,4 +1,10 @@
-﻿  Source.cpp
+﻿  Camera.cpp
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\LR2_3\Camera.cpp(46,31): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\LR2_3\Camera.cpp(50,31): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\LR2_3\Camera.cpp(57,24): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\LR2_3\Camera.cpp(61,30): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\LR2_3\Camera.cpp(65,16): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  Source.cpp
 C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\quaternion.inl(207,15): warning C4244: =: преобразование "double" в "TReal", возможна потеря данных
           with
           [
@@ -49,7 +55,7 @@ C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3
 C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\anim.h(82): message : выполняется компиляция ссылки на экземпляр шаблон функции "bool aiVector3t<float>::operator ==(const aiVector3t<float> &) const"
 C:\Users\user\Desktop\Учеба\С++ программы\ИКГ\Open_GL_LR4\LR_3\packages\Assimp.3.0.0\build\native\include\assimp\types.h(150): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "aiVector3t<float>"
   Создание кода
-  5 of 866 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+  2 of 845 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     8 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
